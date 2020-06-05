@@ -5,6 +5,7 @@ rm -rf output
 echo "Download Oxygen Publishing Engine"
 wget https://mirror.oxygenxml.com/InstData/PublishingEngine/oxygen-publishing-engine-3.x.zip
 unzip oxygen-publishing-engine-3.x.zip
+chmod +x oxygen-publishing-engine-3.x/bin/dita
 
 echo "Inject license"
 
