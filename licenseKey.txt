@@ -1,0 +1,21 @@
+------START-LICENSE-KEY------
+
+Registration_Name=Syncro Soft
+
+Company=
+
+Category=Enterprise
+
+Component=Scripting
+
+Version=22
+
+Number_of_Licenses=1
+
+Date=06-08-2020
+
+Maintenance=365
+
+SGN=MCwCFA+H9h7BrnOTk/bt4UCLX8ryhSwiAhR5I3IH0SY1s70XgaI6RjiwaWXThQ\=\=
+
+-------END-LICENSE-KEY-------
