@@ -9,10 +9,8 @@ chmod +x oxygen-publishing-engine-3.x/bin/dita
 
 echo "Inject license"
 
-# Writes the license key in a file
-# Assumes that $LICENSE_KEY contains the license key with all /n's replaced by @@
-printf "%s" "$LICENSE_KEY" > oxygen-publishing-engine-3.x/licensekey.txt
-sed -i 's/@@/\n/g' oxygen-publishing-engine-3.x/licensekey.txt
+# Copy the license key in OPE
+cp licenseKey.txt oxygen-publishing-engine-3.x/licensekey.txt
 
 echo "Generate WebHelp Responsive Output from " ${DITAMAP}
 
