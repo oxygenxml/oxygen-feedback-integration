@@ -14,10 +14,6 @@ echo "Inject license"
 printf "%s" "$LICENSE_KEY" > oxygen-publishing-engine-3.x/licensekey.txt
 sed -i 's/@@/\n/g' oxygen-publishing-engine-3.x/licensekey.txt
 
-
-# Send some parameters to the "editlink" plugin as system properties
-export ANT_OPTS="$ANT_OPTS"
-
 echo "Generate WebHelp Responsive Output from " ${DITAMAP}
 
 oxygen-publishing-engine-3.x/bin/dita -i $DITAMAP -f webhelp-responsive -o $OUT_DIR -t $TEMP_DIR -Dwebhelp.publishing.template.descriptor=$OPT_FILE -Dwebhelp.publishing.template=$OPT_DIR
