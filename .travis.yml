@@ -1,20 +1,20 @@
 language: dita
 install:
-  - echo "Installed"
+- echo "Installed"
 script:
-  - sh .travis/publish.sh
+- sh .travis/publish.sh
 after_success:
-  - sh .travis/deploy.sh
+- sh .travis/deploy.sh
 env:
   global:
-    - DITAMAP=dita/garage/garage.ditamap
-    - OPT_DIR=publishing/material/
-    - OPT_FILE=material.opt
-    - ANT_OPTS=-Xmx1024M
-    - OUT_DIR=output
-    - TEMP_DIR=temp
+  - DITAMAP=dita/garage/garage.ditamap
+  - OPT_DIR=publishing/material/
+  - OPT_FILE=material.opt
+  - ANT_OPTS=-Xmx1024M
+  - OUT_DIR=output
+  - TEMP_DIR=temp
 before_install:
-  - chmod +x .travis/publish.sh
-  - chmod +x .travis/deploy.sh
-    
-    
+- openssl aes-256-cbc -K $encrypted_ed75db31fc5b_key -iv $encrypted_ed75db31fc5b_iv
+  -in licenseKey.txt.enc -out licenseKey.txt -d
+- chmod +x .travis/publish.sh
+- chmod +x .travis/deploy.sh
