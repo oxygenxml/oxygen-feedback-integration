@@ -8,6 +8,7 @@ after_success:
 env:
   global:
   - DITAMAP=dita/garage/garage.ditamap
+  - DITAVAL=dita/garage/filter.ditaval
   - OPT_DIR=publishing/material/
   - OPT_FILE=material.opt
   - ANT_OPTS=-Xmx1024M
