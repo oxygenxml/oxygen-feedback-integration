@@ -16,7 +16,5 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_ed75db31fc5b_key -iv $encrypted_ed75db31fc5b_iv
   -in licenseKey.txt.enc -out licenseKey.txt -d
-- openssl aes-256-cbc -K $encrypted_d91e7f1b60b7_key -iv $encrypted_d91e7f1b60b7_iv
-  -in licenseKey.txt.enc -out licenseKey.txt -d
 - chmod +x .travis/publish.sh
 - chmod +x .travis/deploy.sh
