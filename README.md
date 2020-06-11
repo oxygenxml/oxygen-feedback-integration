@@ -35,5 +35,72 @@ To install **Oxygen Feedback** in your WebHelp output generated using a transfor
     </html-fragments>
     ```
 
+## Automating DITA to WebHelp Responsive Output with Travis CI
+
+This topic assumes you have a DITA project hosted on a GitHub public or private repository.
+
+The goal of this tutorial is to help you set up a Travis continuous integration job that automatically publishes your DITA project to [GitHub pages](https://pages.github.com/) after every commit. The published website will contain a feedback link on each page that would allow a contributor to easily suggest changes to the documentation by creating a pull request on GitHub with just a few clicks.
+
+### Enable the Travis CI Build 
+
+1.  [Sign in to Travis CI](https://travis-ci.org/) with your GitHub account, accepting the GitHub [access permissions confirmation](https://docs.travis-ci.com/user/github-oauth-scopes).
+2.  Once you are signed in, and you have synchronized your GitHub repositories, go to your [profile page](https://travis-ci.org/profile) and enable Travis CI for the repository you want to build.
+
+### Configure the Travis CI Build in your GitHub Project
+
+1.  Checkout your GitHub project locally.
+2.  Copy the .travis folder from this project to the root directory of your project.
+3.  In the root of your GitHub project, add a file called .travis.yml with the following content:
+
+    ```
+    language: dita
+    install:
+    - echo "Installed"
+    script:
+    - sh .travis/publish.sh
+    after_success:
+    - sh .travis/deploy.sh
+    env:
+        global:
+        - DITAMAP=dita/garage/garage.ditamap
+        - DITAVAL=dita/garage/filter.ditaval
+        - OPT_DIR=publishing/material/
+        - OPT_FILE=material.opt
+        - ANT_OPTS=-Xmx1024M
+        - OUT_DIR=output
+        - TEMP_DIR=temp
+    before_install:
+    - chmod +x .travis/publish.sh
+    - chmod +x .travis/deploy.sh
+    
+    ```
+4.  Create a GitHub personal access token by following [this procedure](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+5.  [Define an environment variable in the repository settings](https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings) that has the name `GH_TOKEN` and the value equal with the GitHub personal access token created earlier.
+
+### Register Your License Key 
+
+1.  Edit your .gitignore file \(or create it if it does not already exist\) and add the following line:
+
+    ```
+    licenseKey.txt
+    ```
+
+2.  Copy your WebHelp license to the root of your GitHub project in a file called licenseKey.txt.**Important:** The licenseKey.txt file should not be committed to GitHub as it contains a license key that is issued only to you.
+3.  [Encrypt the license key file](https://docs.travis-ci.com/user/encrypting-files/#Automated-Encryption) and **add** it to the .travis.yml configuration file. This way only the Travis CI server will be able to decrypt it during the build process.
+
+### Commit to GitHub 
+
+1.  Commit the following files and folders and push the commit to GitHub:
+
+    ```
+    git add .gitignore licenseKey.txt.enc .travis.yml .travis/
+    git commit -m "Set up the Travis CI publishing system"
+    git push
+                        
+    ```
+
+2.  Create a `gh-pages` branch in your GitHub project where the WebHelp Responsive output will be published. You can follow the procedure [here](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site).
+
+
 
 
