@@ -10,7 +10,8 @@ To install **Oxygen Feedback** in your WebHelp output generated using a transfor
 **Prerequisites**
 
 -   You must have a licensed version of **Oxygen XML WebHelp** or **Oxygen Publishing Engine**.
--   To install and manage Oxygen Feedback, you will need to choose a subscription plan during the installation procedure. To see the subscription plans prior to installing the product, go to: [https://www.oxygenxml.com/oxygen\_feedback/buy\_feedback.html](https://www.oxygenxml.com/oxygen_feedback/buy_feedback.html).**Note:** If your subscription expires or if the number of page views allowed by your plan is exceeded for a particular month, you will receive a notification and the comments component will be disabled until the subscription is renewed/upgraded or until the end of the month \(in the case of exceeding the page views limit\).
+-   To install and manage Oxygen Feedback, you will need to choose a subscription plan during the installation procedure. To see the subscription plans prior to installing the product, go to: [https://www.oxygenxml.com/oxygen\_feedback/buy\_feedback.html](https://www.oxygenxml.com/oxygen_feedback/buy_feedback.html).
+**Note:** If your subscription expires or if the number of page views allowed by your plan is exceeded for a particular month, you will receive a notification and the comments component will be disabled until the subscription is renewed/upgraded or until the end of the month \(in the case of exceeding the page views limit\).
 
 **Installation Procedure**
 
@@ -25,7 +26,7 @@ To install **Oxygen Feedback** in your WebHelp output generated using a transfor
     The **Site base URL** field is where you specify the base URL for the website where you publish your output. For WebHelp output, for example, it is the URL where your WebHelp output is deployed. Comments will only be displayed on pages within the hierarchy of the specified base URL. For more details, see the [Version Page](https://www.oxygenxml.com/doc/versions/1.2/ug-feedback/topics/ofb-creating-site.html#ofb-site-initial-version) topic. Click **Continue**.
 
 5.  In the **Installation** page, choose the **Install Feedback in WebHelp output generated from a command line** option.
-6.  Create an XML file \(for example, feedback-install.xml\) on disk with the content generated in the **Installation** page in the admin UI.
+6.  Create an XML file \(for example, `feedback-fragment.xml`\) on disk with the content generated in the **Installation** page in the admin UI.
 7.  In the Putblishing Template Decriptor file \(.opt\) use the `webhelp.fragment.feedback` HTML fragment to specify the path to the file created in the previous step. For example:
 
     ```xml
