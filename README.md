@@ -27,7 +27,7 @@ To install **Oxygen Feedback** in your WebHelp output generated using a transfor
 
 5.  In the **Installation** page, choose the **Install Feedback in WebHelp output generated from a command line** option.
 6.  Create an XML file \(for example, `feedback-fragment.xml`\) on disk with the content generated in the **Installation** page in the admin UI.
-7.  In the Putblishing Template Decriptor file \(.opt\) use the `webhelp.fragment.feedback` HTML fragment to specify the path to the file created in the previous step. For example:
+7.  In the Putblishing Template Decriptor file \(.opt\), use the `webhelp.fragment.feedback` HTML fragment to specify the path to the file created in the previous step. For example:
 
     ```xml
     <html-fragments>
@@ -37,13 +37,13 @@ To install **Oxygen Feedback** in your WebHelp output generated using a transfor
 
 ## Automating DITA to WebHelp Responsive Output with Travis CI
 
-This topic assumes you have a DITA project hosted on a GitHub public or private repository.
+This procedure assumes you have a DITA project hosted on a GitHub public or private repository.
 
 The goal of this tutorial is to help you set up a Travis continuous integration job that automatically publishes your DITA project to [GitHub pages](https://pages.github.com/) after every commit. The published website will contain a feedback link on each page that would allow a contributor to easily suggest changes to the documentation by creating a pull request on GitHub with just a few clicks.
 
 ### Enable the Travis CI Build 
 
-1.  [Sign in to Travis CI](https://travis-ci.org/) with your GitHub account, accepting the GitHub [access permissions confirmation](https://docs.travis-ci.com/user/github-oauth-scopes).
+1.  [Sign in to Travis CI](https://travis-ci.org/) with your GitHub account and accept the GitHub [access permissions confirmation](https://docs.travis-ci.com/user/github-oauth-scopes).
 2.  Once you are signed in, and you have synchronized your GitHub repositories, go to your [profile page](https://travis-ci.org/profile) and enable Travis CI for the repository you want to build.
 
 ### Configure the Travis CI Build in your GitHub Project
@@ -85,8 +85,8 @@ The goal of this tutorial is to help you set up a Travis continuous integration 
     licenseKey.txt
     ```
 
-2.  Copy your WebHelp license to the root of your GitHub project in a file called licenseKey.txt.**Important:** The licenseKey.txt file should not be committed to GitHub as it contains a license key that is issued only to you.
-3.  [Encrypt the license key file](https://docs.travis-ci.com/user/encrypting-files/#Automated-Encryption) and **add** it to the .travis.yml configuration file. This way only the Travis CI server will be able to decrypt it during the build process.
+2.  Copy your WebHelp license to the root of your GitHub project in a file called licenseKey.txt. **Important:** The licenseKey.txt file should not be committed to GitHub as it contains a license key that is issued only to you.
+3.  [Encrypt the license key file](https://docs.travis-ci.com/user/encrypting-files/#Automated-Encryption) and **add** it to the .travis.yml configuration file. This ensures that only the Travis CI server will be able to decrypt it during the build process.
 
 ### Commit to GitHub 
 
