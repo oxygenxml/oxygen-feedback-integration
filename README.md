@@ -7,13 +7,13 @@ Published output: https://oxygenxml.github.io/oxygen-feedback-integration/
 
 To install **Oxygen Feedback** in your WebHelp output generated using a transformation from a command line \(using the **Oxygen XML WebHelp** plugin or **Oxygen Publishing Engine**\), use this procedure:
 
-###Prerequisites
+### Prerequisites
 
 -   You must have a licensed version of **Oxygen XML WebHelp** or **Oxygen Publishing Engine**.
 -   To install and manage Oxygen Feedback, you will need to choose a subscription plan during the installation procedure. To see the subscription plans prior to installing the product, go to: [https://www.oxygenxml.com/oxygen\_feedback/buy\_feedback.html](https://www.oxygenxml.com/oxygen_feedback/buy_feedback.html).
 **Note:** If your subscription expires or if the number of page views allowed by your plan is exceeded for a particular month, you will receive a notification and the comments component will be disabled until the subscription is renewed/upgraded or until the end of the month \(in the case of exceeding the page views limit\).
 
-###Installation Procedure
+### Installation Procedure
 
 1.  Log in to your Feedback account from the *login page* \([https://feedback.oxygenxml.com/login](https://feedback.oxygenxml.com/login)\). You can click on **Log in with Google** or **Log in with Facebook** to create an account using your Google or Facebook credentials or click the **Sign Up** tab to create an account using your name and email address.
 
