@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <publishing-template>
     <name>Material</name>
-    
+    <!-- WebHelp Responsive -->
     <webhelp>
         <tags>
             <tag type="layout">tiles</tag>
             <tag type="color">light</tag>
         </tags>
-        <preview-image file="preview.png"/>
+        <preview-image file="wh-preview.png"/>
         <resources>
             <!-- Main CSS file -->
             <css file="material.css"/>
@@ -35,4 +35,18 @@
             <parameter name="webhelp.top.menu.depth" value="3"/>
         </parameters>
     </webhelp>
+    
+    <!-- PDF Customization -->
+    <pdf>
+        <preview-image file="pdf-preview.png"/>
+        <tags>
+            <tag type="color">light</tag>
+        </tags>
+        <resources>
+            <css file="material-print.css"/>
+        </resources>
+        <parameters>
+            <parameter name="figure.title.placement" value="bottom"/>
+        </parameters>
+    </pdf>
 </publishing-template>
